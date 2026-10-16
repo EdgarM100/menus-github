@@ -94,8 +94,12 @@ if (-not $DryRun) {
         $Owner = ((gh api user --jq .login) | Out-String).Trim()
         if (-not $Owner) { throw "No se pudo obtener tu usuario de GitHub. Ejecuta: gh auth login" }
     }
+    $prevEAP = $ErrorActionPreference
+    $ErrorActionPreference = "SilentlyContinue"
     gh repo view "$Owner/$Slug" *> $null
-    if ($LASTEXITCODE -eq 0) { throw "El repo $Owner/$Slug ya existe en GitHub. Elige otro nombre de cliente." }
+    $repoExiste = ($LASTEXITCODE -eq 0)
+    $ErrorActionPreference = $prevEAP
+    if ($repoExiste) { throw "El repo $Owner/$Slug ya existe en GitHub. Elige otro nombre de cliente." }
 }
 if (-not $Owner) { $Owner = "EdgarM100" }
 
