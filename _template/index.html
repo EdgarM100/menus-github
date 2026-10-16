@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NOMBRE_RESTAURANTE — Menú</title>
+<meta name="description" content="Menú de NOMBRE_RESTAURANTE — DIRECCION">
+<meta name="theme-color" content="#0f1115">
+<style>
+:root{
+  --bg:#0f1115;
+  --card:#171a21;
+  --line:#262b36;
+  --text:#f2f4f8;
+  --muted:#9aa3b2;
+  --accent:#f5b301;
+  --wa:#25d366;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:calc(72px + env(safe-area-inset-bottom));
+}
+header.top{
+  padding:28px 18px 18px;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+}
+header.top h1{
+  font-size:1.6rem;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+header.top .sub{color:var(--accent);font-size:.85rem;letter-spacing:3px;text-transform:uppercase;margin-top:4px}
+nav.chips{
+  position:sticky;top:0;z-index:10;
+  display:flex;gap:8px;
+  overflow-x:auto;
+  padding:10px 14px;
+  background:rgba(15,17,21,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+nav.chips::-webkit-scrollbar{display:none}
+nav.chips a{
+  flex:0 0 auto;
+  color:var(--text);
+  text-decoration:none;
+  font-size:.85rem;
+  padding:7px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--card);
+  white-space:nowrap;
+}
+nav.chips a:active{border-color:var(--accent)}
+main{max-width:640px;margin:0 auto;padding:8px 14px}
+section{margin-top:26px}
+h2{
+  font-size:.8rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:12px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--line);
+}
+.item{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:13px 15px;
+  margin-bottom:10px;
+}
+.item .row{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+}
+.item h3{
+  font-size:1.02rem;
+  font-weight:600;
+  flex:1;
+}
+.item .price{
+  color:var(--accent);
+  font-weight:700;
+  font-size:1.02rem;
+  white-space:nowrap;
+}
+.item p{
+  color:var(--muted);
+  font-size:.87rem;
+  margin-top:3px;
+}
+.item .tag{
+  display:inline-block;
+  margin-top:6px;
+  font-size:.7rem;
+  color:var(--muted);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:1px 8px;
+}
+footer{
+  max-width:640px;
+  margin:34px auto 0;
+  padding:20px 16px 28px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.85rem;
+  text-align:center;
+}
+footer p{margin:3px 0}
+.actions{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:20;
+  display:flex;
+  gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(15,17,21,.95);
+  backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);
+}
+.actions a{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.95rem;
+  padding:13px 8px;
+  border-radius:12px;
+  color:#0f1115;
+}
+.actions .call{background:var(--accent)}
+.actions .wa{background:var(--wa);color:#fff}
+@media (min-width:480px){
+  header.top h1{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>NOMBRE_RESTAURANTE</h1>
+  <p class="sub">Menú</p>
+</header>
+
+<nav class="chips">
+  <a href="#entradas">Entradas</a>
+  <a href="#fuertes">Fuertes</a>
+  <a href="#postres">Postres</a>
+  <a href="#bebidas">Bebidas</a>
+</nav>
+
+<main>
+
+  <section id="entradas">
+    <h2>Entradas</h2>
+    <article class="item">
+      <div class="row"><h3>Sopa del día</h3><span class="price">$65</span></div>
+      <p>Preparada fresca cada mañana.</p>
+    </article>
+    <article class="item">
+      <div class="row"><h3>Ensalada de la casa</h3><span class="price">$75</span></div>
+      <p>Verduras frescas con aderezo de la casa.</p>
+      <span class="tag">Vegetariana</span>
+    </article>
+    <article class="item">
+      <div class="row"><h3>Botana familiar</h3><span class="price">$145</span></div>
+      <p>Para compartir: quesos, guacamole y totopos.</p>
+    </article>
+  </section>
+
+  <section id="fuertes">
+    <h2>Fuertes</h2>
+    <article class="item">
+      <div class="row"><h3>Plato del chef</h3><span class="price">$185</span></div>
+      <p>La especialidad de la casa, pregúntale a tu mesero.</p>
+      <span class="tag">Recomendado</span>
+    </article>
+    <article class="item">
+      <div class="row"><h3>Carne a la parrilla</h3><span class="price">$210</span></div>
+      <p>Acompañado de guarnición de temporada.</p>
+    </article>
+    <article class="item">
+      <div class="row"><h3>Pasta de la casa</h3><span class="price">$160</span></div>
+      <p>Salsa a elección.</p>
+    </article>
+  </section>
+
+  <section id="postres">
+    <h2>Postres</h2>
+    <article class="item">
+      <div class="row"><h3>Postre del día</h3><span class="price">$60</span></div>
+      <p>Pregunta por las opciones.</p>
+    </article>
+    <article class="item">
+      <div class="row"><h3>Café de olla</h3><span class="price">$45</span></div>
+      <p>Con canela y piloncillo.</p>
+    </article>
+  </section>
+
+  <section id="bebidas">
+    <h2>Bebidas</h2>
+    <article class="item">
+      <div class="row"><h3>Aguas frescas</h3><span class="price">$40</span></div>
+      <p>Natural o de la temporada.</p>
+    </article>
+    <article class="item">
+      <div class="row"><h3>Refresco</h3><span class="price">$35</span></div>
+    </article>
+    <article class="item">
+      <div class="row"><h3>Cerveza</h3><span class="price">$55</span></div>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <p>📍 DIRECCION</p>
+  <p>📞 <a href="tel:TELEFONO_NUMERO" style="color:inherit">TELEFONO_NUMERO</a></p>
+  <p>Horario: todos los días</p>
+</footer>
+
+<div class="actions">
+  <a class="call" href="tel:TELEFONO_NUMERO">📞 Llamar</a>
+  <a class="wa" href="https://wa.me/WHATSAPP_NUMERO">💬 WhatsApp</a>
+</div>
+
+</body>
+</html>
